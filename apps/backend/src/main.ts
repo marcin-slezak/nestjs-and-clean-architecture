@@ -4,11 +4,14 @@
  */
 
 import * as express from 'express';
-
+import {User} from '@basic-js-framework/backend/domain'
 const app = express();
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to backend!' });
+  const user = new User()
+  user.firstName = 'Jan'
+  user.lastName = 'Kowalski'
+  res.send({ message: `Welcome ${user.fullName} to backend!` });
 });
 
 const port = process.env.port || 3333;
