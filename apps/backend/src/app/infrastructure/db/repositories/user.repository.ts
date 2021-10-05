@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { IUserRepository } from '../../../domain/interfaces/user-repository.interface';
@@ -11,5 +10,8 @@ export class UserRepository implements IUserRepository {
   ) {}
   getAllUsers() {
     return this.typeOrmUserRepository.find();
+  }
+  addUser(userInput){
+    return this.typeOrmUserRepository.save(userInput);
   }
 }

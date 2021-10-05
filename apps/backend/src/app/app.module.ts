@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './infrastructure/controllers/app.controller';
+import * as Controllers from './infrastructure/controllers/';
 import * as Entities from './domain/entities';
 import {UserService} from './domain/services/user.service';
 import {IUserRepository} from './domain/interfaces/user-repository.interface';
@@ -20,7 +20,7 @@ const db = [
 
 @Module({
   imports: [...db],
-  controllers: [AppController],
+  controllers: Object.values(Controllers),
   providers: [UserService, {provide: IUserRepository, useClass: UserRepository}],
 })
 export class AppModule {}
