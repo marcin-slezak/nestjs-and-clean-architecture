@@ -2,5 +2,13 @@
   "/api": {
     "target": "http://localhost:3333",
     "secure": false
+  },
+  "/front-api-api": {
+    "target": "http://localhost:3333",
+    "secure": false
+  },
+  "/backend-api": {
+    "target": "http://localhost:3333",
+    "secure": false
   }
 }

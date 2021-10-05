@@ -30,9 +30,6 @@
     "backend": {
       "tags": []
     },
-    "backend-domain": {
-      "tags": []
-    },
     "frontend": {
       "tags": []
     },
