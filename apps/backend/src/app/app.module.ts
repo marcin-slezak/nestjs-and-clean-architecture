@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Controllers from './infrastructure/controllers/';
 import * as Entities from './domain/entities';
-import {UserService} from './domain/services/user.service';
+import * as DomainServices from './domain/services';
 import {IUserRepository} from './domain/interfaces/user-repository.interface';
+import {IJobPositionRepository} from './domain/interfaces/job-position-repository.interface';
 import {UserRepository} from './infrastructure/db/repositories/user.repository';
+import {JobPositionRepository} from './infrastructure/db/repositories/job-posittion.repository';
 import getDbConfig from './infrastructure/config/db';
 import * as Schemas from './infrastructure/db/schemas/';
 
@@ -21,6 +23,10 @@ const db = [
 @Module({
   imports: [...db],
   controllers: Object.values(Controllers),
-  providers: [UserService, {provide: IUserRepository, useClass: UserRepository}],
+  providers: [
+    ...Object.values(DomainServices),
+    {provide: IUserRepository, useClass: UserRepository},
+    {provide: IJobPositionRepository, useClass: JobPositionRepository}
+  ],
 })
 export class AppModule {}

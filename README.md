@@ -16,3 +16,15 @@ fetch('/api/user', {
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({firstName: 'Jan', lastName: 'Kowalksi', email: 'jk@test.com'})})
 ```
+- add job position
+
+```javascript
+fetch('/api/job-position', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({title: 'SDM'})})
+```
+
+## Setup
+
+apps/frontend/.env.local
