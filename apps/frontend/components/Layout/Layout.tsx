@@ -8,9 +8,10 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
-import styles from './Layout.module.css'
-import logoPic from '../../public/logo.png'
+import styles from './Layout.module.css';
+
 const theme = createTheme();
+
 type LayoutProps = Record<string, unknown>
 
 export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
@@ -19,18 +20,21 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
 
         <AppBar position="static">
             <Toolbar>
-             <Typography variant="h6" component="div">
-                 Example Recruitment App
-             </Typography>
+                <Link href="/" underline="none" color="inherit">
+                    <Typography variant="h6" component="span">
+                        Example Recruitment App
+                    </Typography>
+                </Link>
+
             </Toolbar>
         </AppBar>
-        <main style={{backgroundColor: theme.palette.grey[100], paddingTop: 32 }}>
+        <main style={{ backgroundColor: theme.palette.grey[100], paddingTop: 32 }}>
             <Container maxWidth="sm" className={styles.containerMinHeight}>
                 {children}
             </Container>
         </main>
         <Box sx={{ bgcolor: 'primary.main', p: 1 }} component="footer">
-            
+
             <Typography variant="body2" color="primary.contrastText" align="center">
                 {'Copyright © '}
                 <Link color="inherit" href="https://wingedcode.com/">

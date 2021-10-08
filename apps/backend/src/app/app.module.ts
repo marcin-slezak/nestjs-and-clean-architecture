@@ -5,8 +5,10 @@ import * as Entities from './domain/entities';
 import * as DomainServices from './domain/services';
 import {IUserRepository} from './domain/interfaces/user-repository.interface';
 import {IJobPositionRepository} from './domain/interfaces/job-position-repository.interface';
+import {IApplicationRepository} from './domain/interfaces/application-repository.interface';
 import {UserRepository} from './infrastructure/db/repositories/user.repository';
 import {JobPositionRepository} from './infrastructure/db/repositories/job-posittion.repository';
+import {ApplicationRepository} from './infrastructure/db/repositories/application.repository';
 import getDbConfig from './infrastructure/config/db';
 import * as Schemas from './infrastructure/db/schemas/';
 
@@ -26,7 +28,8 @@ const db = [
   providers: [
     ...Object.values(DomainServices),
     {provide: IUserRepository, useClass: UserRepository},
-    {provide: IJobPositionRepository, useClass: JobPositionRepository}
+    {provide: IJobPositionRepository, useClass: JobPositionRepository},
+    {provide: IApplicationRepository, useClass: ApplicationRepository}
   ],
 })
 export class AppModule {}
