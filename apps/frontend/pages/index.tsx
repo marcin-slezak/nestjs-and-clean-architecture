@@ -49,7 +49,7 @@ export function Index({ jobPositions }: IndexPorops) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch(`${process.env.BACKEND_API}/job-positions`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/job-positions`)
   const payload = await response.json()
   return {
     props: { jobPositions: (payload.jobPositions || null) },
