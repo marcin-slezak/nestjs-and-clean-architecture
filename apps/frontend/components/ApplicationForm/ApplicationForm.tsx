@@ -28,7 +28,6 @@ export const ApplicationForm: FunctionComponent<ApplicationFormProps> = ({ onSub
         handleBlur,
         handleSubmit,
         isSubmitting,
-        /* and other goodies */
       }) => (
         <form onSubmit={handleSubmit}>
           <TextField 

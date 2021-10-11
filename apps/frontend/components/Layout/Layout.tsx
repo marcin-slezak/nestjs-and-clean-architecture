@@ -9,8 +9,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 import styles from './Layout.module.css';
-
-const theme = createTheme();
+import { deepOrange, grey } from '@mui/material/colors';
+const theme = createTheme({
+    palette: {
+      mode: 'dark',
+    }
+  });
 
 type LayoutProps = Record<string, unknown>
 
@@ -28,14 +32,14 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
 
             </Toolbar>
         </AppBar>
-        <main style={{ backgroundColor: theme.palette.grey[100], paddingTop: 32 }}>
+        <main style={{ backgroundColor: grey[800], paddingTop: 32 }}>
             <Container maxWidth="sm" className={styles.containerMinHeight}>
                 {children}
             </Container>
         </main>
-        <Box sx={{ bgcolor: 'primary.main', p: 1 }} component="footer">
+        <Box sx={{ bgcolor: 'background.default', p: 1 }} component="footer">
 
-            <Typography variant="body2" color="primary.contrastText" align="center">
+            <Typography variant="body2" color="text.secondary" align="center">
                 {'Copyright © '}
                 <Link color="inherit" href="https://wingedcode.com/">
                     Winged Code
