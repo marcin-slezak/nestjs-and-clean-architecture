@@ -11,6 +11,10 @@ Some people are saying that each day, someone creates a new JavaScript framework
 
 This example application allows collecting job applications. We have implemented two pages: 1) a list of available job positions and 2) an application form.
 
+
+https://user-images.githubusercontent.com/35666945/137169501-bee1c092-3bd6-4074-96b6-15e941bf0bd6.mov
+
+
 The rest of the functionalities (e.g. adding available jobs, list of applications) is available via REST API.
 
 ## How
